@@ -28,3 +28,39 @@ const yearElement = document.querySelector("#year");
 if (yearElement) {
   yearElement.textContent = new Date().getFullYear();
 }
+(function () {
+  const contactForm = document.getElementById("contact-form");
+
+  // Run only on pages containing the contact form.
+  if (!contactForm) return;
+
+  const status = document.getElementById("form-status");
+  const submitButton = document.getElementById("submit-button");
+
+  contactForm.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    status.textContent = "Sending your message...";
+    submitButton.disabled = true;
+
+    try {
+      await emailjs.sendForm(
+        "YOUR_SERVICE_ID",
+        "YOUR_TEMPLATE_ID",
+        contactForm
+      );
+
+      status.textContent =
+        "Thank you! Your message has been sent successfully.";
+
+      contactForm.reset();
+    } catch (error) {
+      console.error("EmailJS error:", error);
+
+      status.textContent =
+        "Sorry, your message could not be sent. Please try again.";
+    } finally {
+      submitButton.disabled = false;
+    }
+  });
+})();
