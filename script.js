@@ -46,7 +46,7 @@ if (yearElement) {
     try {
       await emailjs.sendForm(
         "service_976igch",
-        "template_a1093ix",
+        "template_6kbk8ym",
         contactForm
       );
 
@@ -54,9 +54,10 @@ if (yearElement) {
         "Thank you! Your message has been sent successfully.";
 
       contactForm.reset();
-    } catch (error) {
-      console.error("EmailJS error:", error);
-
+   } catch (error) {
+  console.error("EmailJS error details:", error);
+  console.error("Status:", error.status);
+  console.error("Text:", error.text);
       status.textContent =
         "Sorry, your message could not be sent. Please try again.";
     } finally {
