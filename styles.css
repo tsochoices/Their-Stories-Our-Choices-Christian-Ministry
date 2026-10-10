@@ -466,8 +466,7 @@ button:focus-visible {
   *::after {
     transition-duration: 0.01ms !important;
   }
-}
-/* Ministry brand logo */
+}/* Ministry brand logo */
 .brand {
   display: flex;
   align-items: center;
@@ -478,8 +477,6 @@ button:focus-visible {
 }
 
 .brand-logo {
-/* Keep the ministry logo small in the header */
-.site-header .brand-logo {
   display: block;
   width: 58px;
   height: 58px;
@@ -487,29 +484,6 @@ button:focus-visible {
   max-height: 58px;
   object-fit: contain;
   flex-shrink: 0;
-}
-
-/* Keep the brand text beside the logo */
-.site-header .brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  min-width: 0;
-}
-
-.site-header .brand-text {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Smaller logo on phones */
-@media (max-width: 760px) {
-  .site-header .brand-logo {
-    width: 46px;
-    height: 46px;
-    max-width: 46px;
-    max-height: 46px;
-  }
 }
 
 /* Ministry name and subtitle */
@@ -537,6 +511,8 @@ button:focus-visible {
   .brand-logo {
     width: 46px;
     height: 46px;
+    max-width: 46px;
+    max-height: 46px;
   }
 
   .brand-text strong {
@@ -547,10 +523,61 @@ button:focus-visible {
     font-size: 9px;
     letter-spacing: 1px;
   }
+}/* Ministry brand logo */
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+  color: var(--deep-purple);
+  text-decoration: none;
 }
+
+.brand-logo {
+  display: block;
+  width: 58px;
+  height: 58px;
+  max-width: 58px;
+  max-height: 58px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+/* Ministry name and subtitle */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.brand-text strong {
+  display: block;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.brand-text small {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+}
+
+/* Responsive logo for mobile devices */
 @media (max-width: 760px) {
   .brand-logo {
     width: 46px;
     height: 46px;
+    max-width: 46px;
+    max-height: 46px;
+  }
+
+  .brand-text strong {
+    font-size: 14px;
+  }
+
+  .brand-text small {
+    font-size: 9px;
+    letter-spacing: 1px;
   }
 }
