@@ -467,3 +467,20 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+.brand-logo {
+  width: 58px;
+  height: 58px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.brand {
+  min-width: 0;
+}
+
+@media (max-width: 760px) {
+  .brand-logo {
+    width: 46px;
+    height: 46px;
+  }
+}
