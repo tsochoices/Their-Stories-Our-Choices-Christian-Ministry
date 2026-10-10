@@ -478,12 +478,38 @@ button:focus-visible {
 }
 
 .brand-logo {
+/* Keep the ministry logo small in the header */
+.site-header .brand-logo {
   display: block;
   width: 58px;
   height: 58px;
+  max-width: 58px;
+  max-height: 58px;
   object-fit: contain;
-  object-position: center;
   flex-shrink: 0;
+}
+
+/* Keep the brand text beside the logo */
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+
+.site-header .brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Smaller logo on phones */
+@media (max-width: 760px) {
+  .site-header .brand-logo {
+    width: 46px;
+    height: 46px;
+    max-width: 46px;
+    max-height: 46px;
+  }
 }
 
 /* Ministry name and subtitle */
