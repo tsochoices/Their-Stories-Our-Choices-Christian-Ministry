@@ -45,8 +45,8 @@ if (yearElement) {
 
     try {
       await emailjs.sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_976igch",
+        "template_a1093ix",
         contactForm
       );
 
