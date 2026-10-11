@@ -1,47 +1,629 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>Giving | Their Stories, Our Choices Christian Ministry</title>
 
-<header class="site-header">
-  <div class="header-inner">
+  <meta name="description" content="Partner with Their Stories, Our Choices Christian Ministry as we help people navigate faith, culture, and calling.">
 
-    <a class="brand" href="index.html">
+  <style>
+    :root {
+      --purple: #30105C;
+      --deep-purple: #1C0A38;
+      --blue: #173C8F;
+      --gold: #FFD447;
+      --cream: #FFFDF8;
+      --ink: #29213B;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      line-height: 1.7;
+    }
+
+    a {
+      overflow-wrap: anywhere;
+    }
+
+    .navigation {
+      background: var(--deep-purple);
+      padding: 15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px 22px;
+    }
+
+    .navigation a {
+      color: white;
+      text-decoration: none;
+      font: 15px Arial, sans-serif;
+    }
+
+    .navigation a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      text-align: center;
+      color: white;
+      padding: 38px 20px 60px;
+      background: linear-gradient(135deg, var(--deep-purple), var(--purple), var(--blue));
+      border-bottom: 5px solid var(--gold);
+    }
+
+    .logo {
+      display: block;
+      width: 78%;
+      max-width: 680px;
+      max-height: 430px;
+      height: auto;
+      object-fit: contain;
+      margin: 0 auto 30px;
+      filter: drop-shadow(0 8px 15px #0005);
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font: bold 13px Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: clamp(36px, 6vw, 65px);
+      line-height: 1.15;
+      margin: 15px auto;
+      max-width: 850px;
+    }
+
+    h1 span {
+      color: var(--gold);
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: 20px auto 30px;
+      font: 18px/1.8 Arial, sans-serif;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 13px 23px;
+      border-radius: 8px;
+      text-decoration: none;
+      text-align: center;
+      font: bold 15px/1.5 Arial, sans-serif;
+      cursor: pointer;
+    }
+
+    .button-gold {
+      background: var(--gold);
+      color: var(--deep-purple);
+      border: 2px solid var(--gold);
+    }
+
+    .button-blue {
+      background: var(--blue);
+      color: white;
+      border: 2px solid var(--blue);
+    }
+
+    .section {
+      padding: 60px 20px;
+    }
+
+    .inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    h2 {
+      color: var(--purple);
+      text-align: center;
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.25;
+      margin: 0 0 24px;
+    }
+
+    .intro {
+      max-width: 780px;
+      margin: 0 auto 30px;
+      text-align: center;
+      font-size: 17px;
+    }
+
+    .scripture-section {
+      background: #F1EBFC;
+    }
+
+    .scripture-card {
+      max-width: 850px;
+      margin: auto;
+      background: white;
+      border: 2px solid var(--gold);
+      border-radius: 15px;
+      padding: clamp(25px, 5vw, 50px);
+      text-align: center;
+      box-shadow: 0 10px 30px #30105C12;
+    }
+
+    .scripture-card .eyebrow {
+      color: var(--blue);
+    }
+
+    .verse {
+      color: var(--purple);
+      font-size: clamp(19px, 2.5vw, 25px);
+      line-height: 1.9;
+      font-style: italic;
+    }
+
+    .reference {
+      display: inline-block;
+      border-top: 2px solid var(--gold);
+      padding-top: 12px;
+      color: #765200;
+      font: bold 15px Arial, sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .vision-copy {
+      max-width: 790px;
+      margin: auto;
+      font-size: 17px;
+    }
+
+    .freedom-note {
+      background: #F1EBFC;
+      border-left: 5px solid var(--purple);
+      border-radius: 0 10px 10px 0;
+      padding: 20px 23px;
+      margin-top: 28px;
+    }
+
+    .freedom-note strong {
+      color: var(--purple);
+    }
+
+    .giving-section {
+      background: linear-gradient(145deg, var(--purple), var(--blue));
+      color: white;
+    }
+
+    .giving-section h2 {
+      color: var(--gold);
+    }
+
+    .giving-section .intro {
+      color: #F7F2FF;
+    }
+
+    .giving-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .giving-card {
+      background: white;
+      color: var(--ink);
+      border-radius: 12px;
+      border-top: 5px solid var(--gold);
+      padding: 28px 20px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .giving-card h3 {
+      color: var(--purple);
+      font-size: 25px;
+      margin: 0 0 10px;
+    }
+
+    .giving-card p {
+      margin: 0 0 22px;
+      font-size: 15px;
+    }
+
+    .giving-card .button {
+      margin-top: auto;
+    }
+
+    .placeholder-note {
+      color: #62556F;
+      font: italic 12px/1.6 Arial, sans-serif;
+      margin-top: 12px !important;
+      margin-bottom: 0 !important;
+    }
+
+    .giving-disclaimer {
+      max-width: 720px;
+      margin: 30px auto 0;
+      text-align: center;
+      color: #F7F2FF;
+      font: 14px/1.8 Arial, sans-serif;
+    }
+
+    .other-ways {
+      background: white;
+    }
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+      max-width: 800px;
+      margin: 35px auto 0;
+    }
+
+    .support-card {
+      border-radius: 12px;
+      border-top: 5px solid var(--gold);
+      background: var(--cream);
+      padding: 28px 22px;
+      text-align: center;
+    }
+
+    .support-card h3 {
+      color: var(--purple);
+      font-size: 23px;
+      margin-top: 0;
+    }
+
+    .closing {
+      text-align: center;
+      background: #F1EBFC;
+      padding: 55px 20px;
+    }
+
+    .closing blockquote {
+      max-width: 780px;
+      margin: 0 auto;
+      color: var(--purple);
+      font-size: clamp(23px, 3vw, 32px);
+      font-style: italic;
+    }
+
+    .closing p {
+      max-width: 740px;
+      margin: 20px auto;
+    }
+
+    footer {
+      background: var(--deep-purple);
+      color: white;
+      text-align: center;
+      padding: 28px 15px;
+      font: 14px/1.8 Arial, sans-serif;
+    }
+
+    footer a {
+      color: var(--gold);
+    }
+
+    @media (max-width: 700px) {
+      .logo {
+        width: 80%;
+        max-height: 320px;
+      }
+
+      .section {
+        padding: 45px 17px;
+      }
+
+      .giving-grid,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .giving-card {
+        padding: 28px 22px;
+      }
+
+      .giving-card .button,
+      .support-card .button {
+        width: 100%;
+      }
+
+      .navigation {
+        gap: 12px 16px;
+      }
+    }
+
+    @media (max-width: 380px) {
+      .logo {
+        width: 88%;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navigation" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="mission.html">Our Mission</a>
+    <a href="podcast.html">Podcast</a>
+    <a href="stories.html">Stories</a>
+    <a href="giving.html" aria-current="page">Giving</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <main>
+
+    <section class="hero">
       <img
-        class="brand-logo"
+        class="logo"
         src="Logo2026.P.png"
-        alt="Their Stories, Our Choices Christian Ministry logo"
-        width="78"
-        height="78"
-      >
+        alt="Their Stories, Our Choices Christian Ministry logo">
 
-      <span class="brand-text">
-        <strong>Their Stories, Our Choices</strong>
-        <small>CHRISTIAN PODCAST MINISTRY</small>
-      </span>
-    </a>
+      <div class="eyebrow">Faith. Culture. Calling.</div>
 
-    <button
-      class="menu-toggle"
-      id="menu-toggle"
-      type="button"
-      aria-label="Open navigation"
-      aria-expanded="false"
-      aria-controls="main-nav"
-    >
-      ☰
-    </button>
+      <h1>Help Carry the Vision <span>Forward.</span></h1>
 
-    <nav
-      id="main-nav"
-      class="main-nav"
-      aria-label="Main navigation"
-    >
-      <a href="index.html">Home</a>
-      <a href="mission.html">Our Mission</a>
-      <a href="podcast.html">Podcast</a>
-      <a href="stories.html">Share Your Story</a>
-      <a href="giving.html" aria-current="page">Give &amp; Support</a>
+      <p>
+        Every story matters. Every choice can shape a life.
+        Together, we can create space for honest conversations,
+        biblical wisdom, and the courage to walk faithfully in
+        God's purpose.
+      </p>
+
+      <a class="button button-gold" href="#give">
+        Partner With the Ministry
+      </a>
+    </section>
+
+    <section class="section scripture-section">
+      <div class="scripture-card">
+        <div class="eyebrow">The Scripture Behind the Vision</div>
+
+        <h2>Write the Vision. Make It Plain.</h2>
+
+        <p class="verse">
+          “And the LORD answered me, and said, Write the vision,
+          and make it plain upon tables, that he may run that
+          readeth it.
+          <br><br>
+          For the vision is yet for an appointed time, but at the
+          end it shall speak, and not lie: though it tarry, wait
+          for it; because it will surely come, it will not tarry.”
+        </p>
+
+        <div class="reference">HABAKKUK 2:2–3 · KING JAMES VERSION</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="inner">
+        <h2>A Vision Bigger Than Any One of Us</h2>
+
+        <div class="vision-copy">
+          <p>
+            Their Stories, Our Choices Christian Ministry exists
+            to help people navigate faith, culture, and calling
+            through meaningful conversations grounded in biblical
+            truth. We believe that when people are given room to
+            reflect, seek wisdom, and consider their choices,
+            lives can be strengthened and hope can take root.
+          </p>
+
+          <p>
+            This work is about more than a podcast or a single
+            conversation. It is about planting seeds of understanding,
+            encouraging faith, and reminding people that their
+            stories matter to God. It is about conversations that
+            reach beyond us and encourage people to live with
+            greater purpose, compassion, and conviction.
+          </p>
+
+          <p>
+            When you support this ministry, you help us continue
+            sharing these conversations and carrying this vision
+            to more people. Your generosity can help make room
+            for the next episode, the next meaningful conversation,
+            and the next person who needs encouragement.
+          </p>
+
+          <div class="freedom-note">
+            <strong>Please know this: there is no pressure to give.</strong>
+            We believe generosity should come freely and sincerely,
+            never from guilt or obligation. If God is leading you
+            to become a financial partner in this work, your support
+            is received with genuine gratitude. If giving is not
+            possible for you in this season, you are still welcome
+            here. Your prayers, encouragement, and willingness to
+            share this message matter, too.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section giving-section" id="give">
+      <div class="inner">
+        <h2>Help the Vision Reach Further</h2>
+
+        <p class="intro">
+          If you feel led to partner with Their Stories, Our Choices
+          Christian Ministry, we invite you to take part in what
+          God is building. Every willing contribution, offered
+          from the heart, is deeply appreciated.
+        </p>
+
+        <div class="giving-grid">
+
+          <article class="giving-card">
+            <h3>PayPal</h3>
+            <p>
+              Support the ministry through PayPal when our
+              giving link is ready.
+            </p>
+
+            <!-- Replace #paypal-placeholder with your real URL later. -->
+            <a
+              class="button button-blue"
+              href="#paypal-placeholder"
+              aria-label="PayPal giving link coming soon">
+              Give with PayPal
+            </a>
+
+            <p class="placeholder-note">Giving link coming soon.</p>
+          </article>
+
+          <article class="giving-card">
+            <h3>Zelle</h3>
+            <p>
+              Another way to support the ministry will be
+              available here when our payment details are ready.
+            </p>
+
+            <!-- Replace #zelle-placeholder with your instructions later. -->
+            <a
+              class="button button-blue"
+              href="#zelle-placeholder"
+              aria-label="Zelle giving details coming soon">
+              Give with Zelle
+            </a>
+
+            <p class="placeholder-note">Giving details coming soon.</p>
+          </article>
+
+          <article class="giving-card">
+            <h3>Cash App</h3>
+            <p>
+              We plan to offer another convenient way to
+              partner with the ministry.
+            </p>
+
+            <!-- Replace #cashapp-placeholder with your real URL later. -->
+            <a
+              class="button button-blue"
+              href="#cashapp-placeholder"
+              aria-label="Cash App giving link coming soon">
+              Give with Cash App
+            </a>
+
+            <p class="placeholder-note">Giving link coming soon.</p>
+          </article>
+
+        </div>
+
+        <p class="giving-disclaimer">
+          Giving is entirely voluntary. Please give only if you
+          feel led and are able to do so. Your support is appreciated,
+          never expected. Please check back as additional giving
+          options become available.
+        </p>
+      </div>
+    </section>
+
+    <section class="section other-ways">
+      <div class="inner">
+        <h2>There Are Many Ways to Make a Difference</h2>
+
+        <p class="intro">
+          You do not have to give money to help this ministry grow.
+          Your time, your voice, your prayers, and your willingness
+          to share a meaningful message can help it reach someone
+          who needs to hear it.
+        </p>
+
+        <div class="support-grid">
+
+          <article class="support-card">
+            <h3>Watch the Podcast</h3>
+
+            <p>
+              Join us on YouTube for conversations that explore
+              faith, culture, and calling. Watch an episode and
+              share it with someone who may find encouragement
+              or a new perspective.
+            </p>
+
+            <!-- Replace this link with your YouTube channel or playlist. -->
+            <a class="button button-blue" href="podcast.html">
+              Explore the Podcast
+            </a>
+          </article>
+
+          <article class="support-card">
+            <h3>Share the Message</h3>
+
+            <p>
+              Like an episode, leave a thoughtful comment, and
+              share it with your friends and community. One
+              simple share can help a meaningful conversation
+              reach someone new.
+            </p>
+
+            <!-- Add your real social media link when ready. -->
+            <a class="button button-blue" href="contact.html">
+              Connect With Us
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="closing">
+      <blockquote>
+        “Let us not be weary in well doing: for in due season
+        we shall reap, if we faint not.”
+      </blockquote>
+
+      <p><strong>Galatians 6:9 · King James Version</strong></p>
+
+      <p>
+        Thank you for being part of the journey. Whether you give,
+        pray, watch, share, or simply carry this message into your
+        daily life, we are grateful to walk alongside you.
+        May God continue to guide the vision and use every willing
+        heart to make a difference.
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p><strong>Their Stories, Our Choices Christian Ministry</strong></p>
+    <p>Helping people navigate faith, culture, and calling.</p>
+
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="mission.html">Our Mission</a> |
+      <a href="podcast.html">Podcast</a> |
+      <a href="giving.html">Giving</a> |
       <a href="contact.html">Contact</a>
-    </nav>
+    </p>
 
-  </div>
-</header>
+    <p>
+      &copy; <span id="year">2026</span>
+      Their Stories, Our Choices Christian Ministry.
+    </p>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
