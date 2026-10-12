@@ -1,147 +1,959 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Discover Their Stories, Our Choices, a Christian podcast ministry sharing testimonies and biblical encouragement.">
-  <title>Podcast | Their Stories, Our Choices</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Their Stories, Our Choices Christian Ministry: Christ-centered conversations, testimonies, biblical truth, and spiritual growth.">
+<meta name="theme-color" content="#241052">
+<title>Podcast | Their Stories, Our Choices Christian Ministry</title>
+<link rel="stylesheet" href="styles.css">
+
+<style>
+.podcast-page {
+  --purple: #32116b;
+  --deep: #1c0a3d;
+  --blue: #173b91;
+  --gold: #f5c64b;
+  --cream: #fffaf0;
+  --ink: #2d2240;
+  --muted: #5d536d;
+  color: var(--ink);
+  overflow: hidden;
+}
+.podcast-page *,
+.podcast-page *::before,
+.podcast-page *::after {
+  box-sizing: border-box;
+}
+.podcast-page a {
+  transition: transform .2s ease, background-color .2s ease;
+}
+.podcast-page a:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 4px;
+}
+.podcast-page .podcast-container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+.podcast-page .podcast-section,
+.podcast-page .podcast-scripture,
+.podcast-page .podcast-engagement {
+  padding: 70px 22px;
+}
+.podcast-page .podcast-kicker {
+  color: #a77708;
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .15em;
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+.podcast-page .podcast-heading {
+  max-width: 800px;
+  margin: 0 auto 38px;
+  text-align: center;
+}
+.podcast-page .podcast-heading h2 {
+  margin: 10px 0 18px;
+  color: var(--purple);
+  font-size: clamp(2rem, 4.5vw, 3.1rem);
+  line-height: 1.2;
+}
+.podcast-page .podcast-heading > p:not(.podcast-kicker) {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.9;
+}
+.podcast-page .podcast-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  margin-top: 26px;
+}
+.podcast-page .podcast-btn {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 22px;
+  border: 2px solid var(--gold);
+  border-radius: 999px;
+  background: var(--gold);
+  color: #24113f !important;
+  font-size: .94rem;
+  font-weight: 800;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+}
+.podcast-page .podcast-btn:hover {
+  transform: translateY(-3px);
+  background: #ffdf83;
+}
+.podcast-page .podcast-btn-outline {
+  border-color: #fff;
+  background: transparent;
+  color: #fff !important;
+}
+.podcast-page .hero {
+  position: relative;
+  isolation: isolate;
+  min-height: 620px;
+  padding: 65px 22px;
+  overflow: hidden;
+  background: linear-gradient(135deg, var(--deep), var(--purple) 55%, var(--blue));
+  color: #fff;
+  text-align: center;
+}
+.podcast-page .hero::before {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  background-image: url("Logo2026.P.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: min(85%, 650px) auto;
+  content: "";
+  opacity: .24;
+}
+.podcast-page .hero::after {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(25,8,55,.48), rgba(25,8,55,.86));
+  content: "";
+}
+.podcast-page .hero-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.podcast-page .hero-logo {
+  display: block;
+  width: min(230px, 65vw);
+  max-height: 230px;
+  margin: 0 auto 25px;
+  object-fit: contain;
+}
+.podcast-page .hero .eyebrow {
+  color: var(--gold);
+}
+.podcast-page .hero h1 {
+  margin: 15px 0 22px;
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 4.5rem);
+  line-height: 1.12;
+}
+.podcast-page .hero h1 span {
+  color: var(--gold);
+}
+.podcast-page .hero .hero-text {
+  max-width: 760px;
+  margin: 0 auto 18px;
+  color: #f5efff;
+  font-size: 1.08rem;
+  line-height: 1.9;
+}
+.podcast-page .podcast-scripture {
+  border-top: 4px solid var(--gold);
+  border-bottom: 4px solid var(--gold);
+  background: linear-gradient(135deg, #f8f3ff, #fff9e9);
+}
+.podcast-page .podcast-verse {
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 27px;
+  border-left: 5px solid var(--blue);
+  border-radius: 0 15px 15px 0;
+  background: #fff;
+  box-shadow: 0 10px 28px rgba(39,19,80,.07);
+}
+.podcast-page .podcast-verse + .podcast-verse {
+  margin-top: 20px;
+}
+.podcast-page .podcast-verse h3 {
+  margin: 0 0 13px;
+  color: var(--purple);
+  font-size: 1.22rem;
+}
+.podcast-page .podcast-verse p {
+  margin: 0;
+  color: #352846;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.08rem;
+  line-height: 1.95;
+}
+.podcast-page .podcast-reference {
+  display: block;
+  margin-top: 13px;
+  color: var(--blue);
+  font-size: .85rem;
+  font-weight: 800;
+}
+.podcast-page .podcast-reflection,
+.podcast-page .podcast-fruit-note {
+  max-width: 900px;
+  margin: 28px auto 0;
+  color: var(--muted);
+  line-height: 1.9;
+  text-align: center;
+}
+.podcast-page .podcast-declaration,
+.podcast-page .podcast-membership {
+  padding: 76px 22px;
+  background: linear-gradient(130deg, #251052, #173b91);
+  color: #fff;
+  text-align: center;
+}
+.podcast-page .podcast-declaration .podcast-kicker,
+.podcast-page .podcast-membership .podcast-kicker {
+  color: var(--gold);
+}
+.podcast-page .podcast-declaration blockquote {
+  max-width: 960px;
+  margin: 25px auto;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(2rem, 5.5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.25;
+}
+.podcast-page .podcast-declaration blockquote span {
+  color: var(--gold);
+}
+.podcast-page .podcast-declaration .podcast-verse {
+  margin-top: 30px;
+  border-top: 4px solid var(--gold);
+  border-left: 0;
+  border-radius: 14px;
+  color: var(--ink);
+  text-align: center;
+}
+.podcast-page .podcast-fruit-grid,
+.podcast-page .podcast-platform-grid,
+.podcast-page .podcast-social-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.podcast-page .podcast-fruit,
+.podcast-page .podcast-platform-card,
+.podcast-page .podcast-social-link {
+  border: 1px solid #e6dcf6;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 6px 20px rgba(39,19,80,.05);
+}
+.podcast-page .podcast-fruit {
+  padding: 22px 14px;
+  color: var(--purple);
+  font-weight: 800;
+  text-align: center;
+}
+.podcast-page .podcast-fruit span {
+  display: block;
+  margin-bottom: 7px;
+  color: #b08011;
+  font-size: 1.4rem;
+}
+.podcast-page .podcast-platforms {
+  background: #f7f5fc;
+}
+.podcast-page .podcast-platform-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 27px 19px;
+  text-align: center;
+}
+.podcast-page .podcast-platform-icon {
+  display: grid;
+  width: 58px;
+  height: 58px;
+  place-items: center;
+  margin-bottom: 16px;
+  border-radius: 50%;
+  background: #eee7ff;
+  color: var(--purple);
+  font-size: 1.55rem;
+  font-weight: 900;
+}
+.podcast-page .podcast-platform-card h3 {
+  margin: 0 0 12px;
+  color: var(--purple);
+  font-size: 1.22rem;
+}
+.podcast-page .podcast-platform-card p {
+  flex: 1;
+  margin: 0 0 21px;
+  color: var(--muted);
+  font-size: .95rem;
+  line-height: 1.85;
+}
+.podcast-page .podcast-platform-card .podcast-btn {
+  width: 100%;
+}
+.podcast-page .podcast-engagement {
+  background: var(--cream);
+}
+.podcast-page .podcast-engagement-panel {
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 34px;
+  border: 1px solid #eadcb7;
+  border-radius: 20px;
+  background: #fff;
+  text-align: center;
+}
+.podcast-page .podcast-engagement-panel h2,
+.podcast-page .podcast-closing h2 {
+  color: var(--purple);
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+}
+.podcast-page .podcast-engagement-panel p,
+.podcast-page .podcast-membership p,
+.podcast-page .podcast-closing p {
+  font-size: 1.02rem;
+  line-height: 1.95;
+}
+.podcast-page .podcast-engagement-panel p {
+  color: var(--muted);
+}
+.podcast-page .podcast-membership-inner {
+  max-width: 850px;
+  margin: 0 auto;
+}
+.podcast-page .podcast-membership h2 {
+  color: #fff;
+  font-size: clamp(2rem, 5vw, 3.3rem);
+}
+.podcast-page .podcast-membership p {
+  color: #f3edff;
+}
+.podcast-page .podcast-social-link {
+  display: flex;
+  min-height: 76px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 17px 12px;
+  color: var(--purple) !important;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none;
+}
+.podcast-page .podcast-social-link:hover {
+  transform: translateY(-3px);
+  background: #fff7dc;
+}
+.podcast-page .podcast-social-symbol {
+  display: inline-grid;
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  place-items: center;
+  border-radius: 50%;
+  background: #eee7ff;
+  font-size: 1.1rem;
+}
+.podcast-page .podcast-closing {
+  padding: 65px 22px;
+  background: #fffaf0;
+  text-align: center;
+}
+@media (max-width: 760px) {
+  .podcast-page .podcast-fruit-grid,
+  .podcast-page .podcast-platform-grid,
+  .podcast-page .podcast-social-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+}
+@media (max-width: 430px) {
+  .podcast-page .podcast-fruit-grid,
+  .podcast-page .podcast-platform-grid,
+  .podcast-page .podcast-social-grid {
+    grid-template-columns: 1fr;
+  }
+  .podcast-page .podcast-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .podcast-page .podcast-actions .podcast-btn {
+    width: 100%;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .podcast-page a {
+    transition: none;
+  }
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="index.html">
- 
-<img
-  class="brand-logo"
-  src="Logo2026.P.png"
-  alt="Their Stories, Our Choices Christian Ministry logo"
->
 
-        <strong>Their Stories, Our Choices</strong>
-        <small>CHRISTIAN PODCAST MINISTRY</small>
-      </span>
-    </a>
-    <button class="menu-toggle" aria-label="Open navigation"
-      aria-expanded="false" aria-controls="main-nav">☰</button>
-    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="mission.html">Our Mission</a>
-      <a href="podcast.html" aria-current="page">Podcast</a>
-      <a href="stories.html">Share Your Story</a>
-      <a href="giving.html">Give &amp; Support</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img class="brand-logo" src="Logo2026.P.png"
+      alt="Their Stories, Our Choices Christian Ministry logo">
+    <strong>Their Stories, Our Choices</strong>
+    <small>CHRISTIAN PODCAST MINISTRY</small>
+  </a>
+  <button class="menu-toggle" type="button" aria-label="Open navigation"
+    aria-expanded="false" aria-controls="main-nav">☰</button>
+  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+    <a href="index.html">Home</a>
+    <a href="mission.html">Our Mission</a>
+    <a href="podcast.html" aria-current="page">Podcast</a>
+    <a href="stories.html">Share Your Story</a>
+    <a href="giving.html">Give &amp; Support</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-content">
-        <p class="eyebrow">WELCOME TO THE CONVERSATION</p>
-        <h1>Real Stories.<br><span>Faith-Filled Conversations.</span></h1>
-        <p class="hero-text">
-          Every testimony carries a story. Every life experience offers
-          an opportunity to learn. Join us as we explore faith, choices,
-          lessons, and the grace of God.
-        </p>
-        <a class="button button-gold" href="#episodes">Explore Episodes</a>
-      </div>
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-circle">
-          <span class="art-cross">♫</span>
-          <span class="art-caption">LISTEN • REFLECT • GROW</span>
-        </div>
-      </div>
-    </section>
+<main class="podcast-page">
 
-    <section class="section welcome">
-      <p class="eyebrow">MORE THAN A PODCAST</p>
-      <h2>A Ministry of Stories and Spiritual Growth</h2>
-      <p class="section-intro">
-        Their Stories, Our Choices provides a welcoming space for honest
-        conversations about the decisions we make, the lessons we learn,
-        and the ways faith can shape our journeys. Our goal is not to
-        judge people's experiences, but to encourage reflection, share
-        biblical wisdom, and point listeners toward God.
-      </p>
-    </section>
+<section class="hero">
+  <div class="hero-content">
+    <img class="hero-logo" src="Logo2026.P.png"
+      alt="Their Stories, Our Choices Christian Ministry">
+    <p class="eyebrow">WELCOME TO THE CONVERSATION</p>
+    <h1>Their Stories,<br><span>Our Choices.</span></h1>
+    <p class="hero-text">
+      Every testimony carries a story. Every life experience offers
+      an opportunity to learn. Join us as we explore faith, choices,
+      lessons, and the transforming grace of God.
+    </p>
+    <p class="hero-text">
+      We are more than listeners. We are a family choosing faith,
+      embracing accountability, and encouraging one another to
+      walk boldly in the calling of the Lord.
+    </p>
+    <div class="podcast-actions">
+      <a class="podcast-btn" href="#listen">Listen &amp; Subscribe</a>
+      <a class="podcast-btn podcast-btn-outline" href="#family">
+        Join Our Ministry Family
+      </a>
+    </div>
+  </div>
+</section>
 
-    <section class="section" id="episodes">
-      <div class="section-heading">
-        <p class="eyebrow">TUNE IN AND BE ENCOURAGED</p>
-        <h2>Podcast Episodes</h2>
-        <p class="section-intro">
-          New conversations and testimonies will be featured here.
-          Check back for updates as the ministry grows.
-        </p>
-      </div>
-
-      <div class="card-grid">
-        <article class="ministry-card">
-          <span class="card-icon" aria-hidden="true">🎙</span>
-          <p class="eyebrow">INTRODUCTION</p>
-          <h3>Welcome to Their Stories, Our Choices</h3>
-          <p>
-            Discover the heart behind the ministry, why testimonies
-            matter, and how our stories can encourage faith and growth.
-          </p>
-          <p><strong>Episode coming soon</strong></p>
-        </article>
-
-        <article class="ministry-card">
-          <span class="card-icon" aria-hidden="true">✦</span>
-          <p class="eyebrow">FAITH &amp; CHOICES</p>
-          <h3>Lessons Along the Journey</h3>
-          <p>
-            A conversation about learning from life's experiences and
-            seeking God's wisdom when making important decisions.
-          </p>
-          <p><strong>Episode coming soon</strong></p>
-        </article>
-
-        <article class="ministry-card">
-          <span class="card-icon" aria-hidden="true">♡</span>
-          <p class="eyebrow">TESTIMONY &amp; HOPE</p>
-          <h3>Stories That Encourage the Heart</h3>
-          <p>
-            Personal stories of perseverance, hope, faith, and discovering
-            God's presence through life's changing seasons.
-          </p>
-          <p><strong>Episode coming soon</strong></p>
-        </article>
-      </div>
-    </section>
-
-    <section class="support-banner">
-      <p class="eyebrow">YOUR STORY MAY HELP SOMEONE</p>
-      <h2>Have a Testimony to Share?</h2>
+<section class="podcast-scripture" id="scripture">
+  <div class="podcast-container">
+    <div class="podcast-heading">
+      <p class="podcast-kicker">THE FOUNDATION OF OUR WALK</p>
+      <h2>We Must Know the Word to Live the Truth.</h2>
       <p>
-        If you feel comfortable sharing your experiences, we'd love
-        to hear from you. Your story may be an encouragement to someone
-        who needs hope, understanding, or a reminder of God's grace.
+        We cannot walk confidently in what we do not seek to understand.
+        God's Word calls us into wisdom, obedience, spiritual maturity,
+        and a deeper relationship with Him.
       </p>
-      <a class="button button-gold" href="stories.html">Share Your Story</a>
-    </section>
+    </div>
+    <article class="podcast-verse">
+      <h3>Hosea 4:6 — King James Version</h3>
+      <p>
+        My people are destroyed for lack of knowledge: because thou hast
+        rejected knowledge, I will also reject thee, that thou shalt be
+        no priest to me: seeing thou hast forgotten the law of thy God,
+        I will also forget thy children.
+      </p>
+      <span class="podcast-reference">HOSEA 4:6 · KJV</span>
+    </article>
+    <article class="podcast-verse">
+      <h3>Hosea 4:7 — King James Version</h3>
+      <p>
+        As they were increased, so they sinned against me:
+        therefore will I change their glory into shame.
+      </p>
+      <span class="podcast-reference">HOSEA 4:7 · KJV</span>
+    </article>
+    <p class="podcast-reflection">
+      May we never become so comfortable with what we know that we stop
+      growing in what God desires to teach us. May our lives reflect
+      reverence for His Word, humility in our choices, and a genuine
+      hunger for His truth.
+    </p>
+  </div>
+</section>
 
-    <section class="scripture section">
-      <blockquote>
-        “O magnify the LORD with me, and let us exalt his name together.”
-      </blockquote>
-      <p>Psalm 34:3 · KJV</p>
-    </section>
-  </main>
+<!-- OUR DECLARATION OF FAITH -->
+<section class="podcast-declaration">
+  <div class="podcast-container">
+    <p class="podcast-kicker">OUR FAITH. OUR CONVICTION. OUR CALLING.</p>
 
-  <footer class="site-footer">
-    <a class="footer-brand" href="index.html">Their Stories, Our Choices</a>
-    <p>A ministry of faith, testimony, and encouragement.</p>
-    <nav aria-label="Footer navigation">
-      <a href="mission.html">Our Mission</a>
-      <a href="giving.html">Give &amp; Support</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-    <p class="copyright">© <span id="year">2026</span> Their Stories, Our Choices. All rights reserved.</p>
-    <p class="footer-note">Created to encourage faith and glorify God.</p>
-  </footer>
-  <script src="script.js"></script>
+    <blockquote>
+      We will live <span>unapologetically for the Lord.</span>
+    </blockquote>
+
+    <p>
+      This generation will no longer make excuses for the very things
+      God is calling us to surrender. We will surge forward in faith,
+      move with courage, and pursue the things of God with conviction.
+      We will not simply speak about change; we will allow Christ to
+      transform the way we live.
+    </p>
+
+    <p>
+      We will love beyond convenience, forgive beyond pride, serve
+      beyond recognition, and stand for truth even when standing
+      requires sacrifice. We will pursue holiness, walk in obedience,
+      and bear the fruit of a life surrendered to the Holy Spirit.
+      Our choices will reflect our faith, and our lives will bear
+      witness to the goodness of God.
+    </p>
+
+    <article class="podcast-verse">
+      <h3>Philippians 1:21 — King James Version</h3>
+      <p>For to me to live is Christ, and to die is gain.</p>
+      <span class="podcast-reference">PHILIPPIANS 1:21 · KJV</span>
+    </article>
+  </div>
+</section>
+
+<!-- THE FRUITS OF THE SPIRIT -->
+<section class="podcast-section" id="fruits">
+  <div class="podcast-container">
+    <div class="podcast-heading">
+      <p class="podcast-kicker">FAITH THAT BEARS FRUIT</p>
+      <h2>A Generation That Lives What It Believes</h2>
+      <p>
+        We are called to more than words, appearances, or promises.
+        As we grow in Christ, the Holy Spirit works within us,
+        shaping our character and teaching us to reflect the heart
+        of Jesus in our homes, relationships, decisions, and everyday lives.
+      </p>
+    </div>
+
+    <div class="podcast-fruit-grid">
+      <div class="podcast-fruit"><span>✦</span>Love</div>
+      <div class="podcast-fruit"><span>✦</span>Joy</div>
+      <div class="podcast-fruit"><span>✦</span>Peace</div>
+      <div class="podcast-fruit"><span>✦</span>Longsuffering</div>
+      <div class="podcast-fruit"><span>✦</span>Gentleness</div>
+      <div class="podcast-fruit"><span>✦</span>Goodness</div>
+      <div class="podcast-fruit"><span>✦</span>Faith</div>
+      <div class="podcast-fruit"><span>✦</span>Meekness</div>
+      <div class="podcast-fruit"><span>✦</span>Temperance</div>
+    </div>
+
+    <p class="podcast-fruit-note">
+      <strong>Galatians 5:22–23 · KJV</strong><br>
+      These are the fruits we desire to cultivate as we walk
+      in the Spirit. May our faith be visible in how we love,
+      how we respond, how we serve, and how we treat one another.
+    </p>
+  </div>
+</section>
+
+<!-- LISTEN AND SUBSCRIBE -->
+<section class="podcast-section podcast-platforms" id="listen">
+  <div class="podcast-container">
+    <div class="podcast-heading">
+      <p class="podcast-kicker">TUNE IN AND BE ENCOURAGED</p>
+      <h2>Listen. Subscribe. Grow With Us.</h2>
+      <p>
+        Let every episode be an opportunity to pause, reflect,
+        learn, and draw closer to God. Subscribe on your preferred
+        platform so you can stay connected with our ministry.
+      </p>
+      <p>
+        If a message encourages you, like it, share it with someone
+        you love, and join the conversation in the comments.
+      </p>
+    </div>
+
+    <div class="podcast-platform-grid">
+
+      <article class="podcast-platform-card">
+        <div class="podcast-platform-icon" aria-hidden="true">▶</div>
+        <h3>YouTube</h3>
+        <p>
+          Watch, listen, subscribe, and join the conversation.
+          Like our videos, share them, and leave a thoughtful
+          comment about what spoke to your heart.
+        </p>
+        <a class="podcast-btn"
+           href="https://youtube.com/@tsoc-tv?si=u90KBiARVKhl7PKK"
+           target="_blank" rel="noopener noreferrer">
+          Visit Our YouTube
+        </a>
+      </article>
+
+      <article class="podcast-platform-card">
+        <div class="podcast-platform-icon" aria-hidden="true">♫</div>
+        <h3>Spotify</h3>
+        <p>
+          Follow the podcast, listen throughout your day,
+          and share episodes that inspire you to grow in faith.
+        </p>
+        <a class="podcast-btn"
+           href="https://open.spotify.com/show/4xRzv2MYoMHjfx6y1BRiYG"
+           target="_blank" rel="noopener noreferrer">
+          Listen on Spotify
+        </a>
+      </article>
+
+      <article class="podcast-platform-card">
+        <div class="podcast-platform-icon" aria-hidden="true">♪</div>
+        <h3>Apple Podcasts</h3>
+        <p>
+          Follow the show, listen to our conversations,
+          and share episodes with someone who needs
+          encouragement and biblical truth.
+        </p>
+        <a class="podcast-btn"
+           href="https://podcasts.apple.com/us/podcast/their-stories-our-choices/id6821698466"
+           target="_blank" rel="noopener noreferrer">
+          Listen on Apple Podcasts
+        </a>
+      </article>
+
+    </div>
+
+    <p class="podcast-fruit-note">
+      Our heart is to create a space where biblical truth,
+      honest reflection, and the transforming grace of God
+      encourage us to make choices that honor Him.
+    </p>
+  </div>
+</section>
+
+<!-- EPISODE PREVIEWS -->
+<section class="section" id="episodes">
+  <div class="section-heading">
+    <p class="eyebrow">TUNE IN AND BE ENCOURAGED</p>
+    <h2>Podcast Episodes</h2>
+    <p class="section-intro">
+      Explore the heart of our ministry and the conversations
+      we hope will encourage reflection, strengthen faith,
+      and point listeners toward God.
+    </p>
+  </div>
+
+  <div class="card-grid">
+
+    <article class="ministry-card">
+      <span class="card-icon" aria-hidden="true">🎙</span>
+      <p class="eyebrow">INTRODUCTION</p>
+      <h3>Welcome to Their Stories, Our Choices</h3>
+      <p>
+        Discover the heart behind the ministry, why testimonies
+        matter, and how our stories can encourage faith and growth.
+      </p>
+      <p><strong>Episode coming soon</strong></p>
+      <a href="https://youtube.com/@tsoc-tv?si=u90KBiARVKhl7PKK"
+         target="_blank" rel="noopener noreferrer">
+        Visit our YouTube channel
+      </a>
+    </article>
+
+    <article class="ministry-card">
+      <span class="card-icon" aria-hidden="true">✦</span>
+      <p class="eyebrow">FAITH &amp; CHOICES</p>
+      <h3>Lessons Along the Journey</h3>
+      <p>
+        A conversation about learning from life's experiences
+        and seeking God's wisdom when making important decisions.
+      </p>
+      <p><strong>Episode coming soon</strong></p>
+      <a href="https://open.spotify.com/show/4xRzv2MYoMHjfx6y1BRiYG"
+         target="_blank" rel="noopener noreferrer">
+        Explore our podcast on Spotify
+      </a>
+    </article>
+
+    <article class="ministry-card">
+      <span class="card-icon" aria-hidden="true">♡</span>
+      <p class="eyebrow">TESTIMONY &amp; HOPE</p>
+      <h3>Stories That Encourage the Heart</h3>
+      <p>
+        Personal stories of perseverance, hope, faith, and
+        discovering God's presence through life's changing seasons.
+      </p>
+      <p><strong>Episode coming soon</strong></p>
+      <a href="https://podcasts.apple.com/us/podcast/their-stories-our-choices/id6821698466"
+         target="_blank" rel="noopener noreferrer">
+        Explore our podcast on Apple Podcasts
+      </a>
+    </article>
+
+  </div>
+</section>
+  
+<!-- JOIN OUR MINISTRY FAMILY -->
+<section class="podcast-membership" id="family">
+  <div class="podcast-container podcast-membership-inner">
+    <p class="podcast-kicker">YOU BELONG HERE</p>
+
+    <h2>More Than an Audience. A Family of Faith.</h2>
+
+    <p>
+      We believe that ministry is more than what happens behind a
+      microphone or on a screen. It is about people, fellowship,
+      encouragement, accountability, and growing together in Christ.
+      We want you to feel welcomed, valued, and encouraged as we
+      continue this journey of faith together.
+    </p>
+
+    <p>
+      When you become a member of our YouTube community, you help
+      support the continued growth of Their Stories, Our Choices
+      Christian Ministry. Your participation helps us keep sharing
+      messages of faith, testimonies, biblical encouragement, and
+      conversations that point hearts toward the Lord.
+    </p>
+
+    <p>
+      If this ministry speaks to your heart, prayerfully consider
+      joining our ministry family. We would be honored to have you
+      grow alongside us.
+    </p>
+
+    <div class="podcast-actions">
+      <a class="podcast-btn"
+         href="https://www.youtube.com/channel/UCym7xLkxopodl6PEvvDdH9w/join"
+         target="_blank" rel="noopener noreferrer">
+        Join Our YouTube Membership
+      </a>
+
+      <a class="podcast-btn podcast-btn-outline"
+         href="https://youtube.com/@tsoc-tv?si=u90KBiARVKhl7PKK"
+         target="_blank" rel="noopener noreferrer">
+        Subscribe on YouTube
+      </a>
+    </div>
+
+    <p>
+      Thank you for every prayer, every encouraging word, every share,
+      and every act of support. May God use each of us to make a
+      difference in the lives of others.
+    </p>
+  </div>
+</section>
+
+<!-- CONNECT ON SOCIAL MEDIA -->
+<section class="podcast-section" id="connect">
+  <div class="podcast-container">
+
+    <div class="podcast-heading">
+      <p class="podcast-kicker">LET'S STAY CONNECTED</p>
+
+      <h2>Follow the Ministry. Join the Conversation.</h2>
+
+      <p>
+        Our ministry family extends beyond the podcast. Follow us
+        on social media for encouragement, updates, faith-filled
+        messages, and opportunities to connect with others who are
+        seeking to grow in Christ.
+      </p>
+
+      <p>
+        We invite you to like our posts, share messages that encourage
+        you, and leave a thoughtful comment. Tell us what resonated
+        with you, share what you learned, or offer a word of
+        encouragement to someone else. Your voice matters, and your
+        participation may be the encouragement another person needs.
+      </p>
+    </div>
+
+    <div class="podcast-social-grid">
+
+      <a class="podcast-social-link"
+         href="https://www.facebook.com/share/p/1Dacww4XDX/"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Visit Their Stories, Our Choices on Facebook">
+        <span class="podcast-social-symbol" aria-hidden="true">f</span>
+        Facebook
+      </a>
+
+      <a class="podcast-social-link"
+         href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&amp;utm_medium=copy_link&amp;utm_content=6zk580e"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Connect with Their Stories, Our Choices on Instagram">
+        <span class="podcast-social-symbol" aria-hidden="true">◎</span>
+        Instagram
+      </a>
+
+      <a class="podcast-social-link"
+         href="https://www.tiktok.com/@tsochoices?_r=1&amp;_t=ZP-9AV2Og7lXOJ"
+         target="_blank" rel="noopener noreferrer"
+         aria-label="Follow Their Stories, Our Choices on TikTok">
+        <span class="podcast-social-symbol" aria-hidden="true">♪</span>
+        TikTok
+      </a>
+
+    </div>
+
+    <div class="podcast-actions">
+      <a class="podcast-btn"
+         href="https://youtube.com/@tsoc-tv?si=u90KBiARVKhl7PKK"
+         target="_blank" rel="noopener noreferrer">
+        Watch, Like &amp; Share
+      </a>
+
+      <a class="podcast-btn"
+         href="stories.html">
+        Share Your Story
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- LIKE, SHARE, AND PARTICIPATE -->
+<section class="podcast-engagement">
+  <div class="podcast-container podcast-engagement-panel">
+
+    <p class="podcast-kicker">YOUR PARTICIPATION MAKES A DIFFERENCE</p>
+
+    <h2>Don't Keep the Encouragement to Yourself.</h2>
+
+    <p>
+      When a message touches your heart, consider sharing it with
+      a friend, a family member, or someone who may need hope.
+      A simple share can help a message reach a person who needs
+      to be reminded that God has not forgotten them.
+    </p>
+
+    <p>
+      We also welcome you to join the conversation in the comment
+      sections on our platforms. Share your reflections, encourage
+      other listeners, ask respectful questions, and let us know
+      how the message has spoken to you. Let our conversations be
+      filled with grace, truth, kindness, and respect.
+    </p>
+
+    <p>
+      <strong>
+        Listen with an open heart. Share with a willing spirit.
+        Comment with kindness. Grow with purpose. And above all,
+        let everything we do bring glory to God.
+      </strong>
+    </p>
+
+    <div class="podcast-actions">
+      <a class="podcast-btn"
+         href="https://youtube.com/@tsoc-tv?si=u90KBiARVKhl7PKK"
+         target="_blank" rel="noopener noreferrer">
+        Join Us on YouTube
+      </a>
+
+      <a class="podcast-btn"
+         href="https://www.facebook.com/share/p/1Dacww4XDX/"
+         target="_blank" rel="noopener noreferrer">
+        Connect on Facebook
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- CLOSING SCRIPTURE AND ENCOURAGEMENT -->
+<section class="podcast-closing">
+  <div class="podcast-container">
+
+    <p class="podcast-kicker">LET US WALK THIS JOURNEY TOGETHER</p>
+
+    <h2>Every Story Matters. Every Choice Has Meaning.</h2>
+
+    <p>
+      No matter where your journey has taken you, there is room
+      to learn, grow, heal, and move forward with faith. May we
+      continue to extend grace, seek wisdom, make choices that
+      honor God, and encourage one another along the way.
+    </p>
+
+    <p>
+      As we share our stories and learn from one another, may
+      our lives become testimonies of God's faithfulness.
+      We invite you to remain connected, continue the conversation,
+      and walk with us as we seek to live out our faith every day.
+    </p>
+
+    <blockquote>
+      “O magnify the LORD with me, and let us exalt his name together.”
+    </blockquote>
+
+    <p><strong>Psalm 34:3 · KJV</strong></p>
+
+    <div class="podcast-actions">
+      <a class="podcast-btn"
+         href="https://open.spotify.com/show/4xRzv2MYoMHjfx6y1BRiYG"
+         target="_blank" rel="noopener noreferrer">
+        Listen on Spotify
+      </a>
+
+      <a class="podcast-btn"
+         href="https://podcasts.apple.com/us/podcast/their-stories-our-choices/id6821698466"
+         target="_blank" rel="noopener noreferrer">
+        Listen on Apple Podcasts
+      </a>
+    </div>
+
+  </div>
+</section>
+
+</main>
+
+<!-- WEBSITE FOOTER -->
+<footer class="site-footer">
+  <a class="footer-brand" href="index.html">
+    Their Stories, Our Choices
+  </a>
+
+  <p>A ministry of faith, testimony, biblical truth, and encouragement.</p>
+
+  <nav aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="mission.html">Our Mission</a>
+    <a href="stories.html">Share Your Story</a>
+    <a href="giving.html">Give &amp; Support</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <nav aria-label="Podcast and social media links">
+    <a href="https://youtube.com/@tsoc-tv?si=u90KBiARVKhl7PKK"
+       target="_blank" rel="noopener noreferrer">YouTube</a>
+
+    <a href="https://open.spotify.com/show/4xRzv2MYoMHjfx6y1BRiYG"
+       target="_blank" rel="noopener noreferrer">Spotify</a>
+
+    <a href="https://podcasts.apple.com/us/podcast/their-stories-our-choices/id6821698466"
+       target="_blank" rel="noopener noreferrer">Apple Podcasts</a>
+
+    <a href="https://www.facebook.com/share/p/1Dacww4XDX/"
+       target="_blank" rel="noopener noreferrer">Facebook</a>
+
+    <a href="https://www.instagram.com/invites/contact/?utm_source=ig_contact_invite&amp;utm_medium=copy_link&amp;utm_content=6zk580e"
+       target="_blank" rel="noopener noreferrer">Instagram</a>
+
+    <a href="https://www.tiktok.com/@tsochoices?_r=1&amp;_t=ZP-9AV2Og7lXOJ"
+       target="_blank" rel="noopener noreferrer">TikTok</a>
+  </nav>
+
+  <p class="copyright">
+    © <span id="year">2026</span> Their Stories, Our Choices.
+    All rights reserved.
+  </p>
+
+  <p class="footer-note">Created to encourage faith and glorify God.</p>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  const yearElement = document.getElementById("year");
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+</script>
+
 </body>
 </html>
+
+
