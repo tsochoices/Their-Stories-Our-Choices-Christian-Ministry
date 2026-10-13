@@ -1,43 +1,53 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Their Stories, Our Choices Christian Podcast Ministry about testimonies, podcast guests, and ministry inquiries.">
+
+  <meta
+    name="description"
+    content="Contact Their Stories, Our Choices Christian Podcast Ministry about testimonies, podcast guests, and ministry inquiries."
+  >
+
   <title>Contact Us | Their Stories, Our Choices</title>
+
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img
-      class="brand-logo"
-      src="Logo2026.P.png"
-      alt="Their Stories, Our Choices Christian Ministry logo"
+  <!-- SITE HEADER -->
+  <header class="site-header">
+    <a class="brand" href="index.html">
+      <img
+        class="brand-logo"
+        src="Logo2026.P.png"
+        alt="Their Stories, Our Choices Christian Ministry logo"
+      >
+
+      <span class="brand-text">
+        <strong>Their Stories, Our Choices</strong>
+        <small>CHRISTIAN PODCAST MINISTRY</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      aria-label="Open navigation"
+      aria-expanded="false"
+      aria-controls="main-nav"
+      type="button"
     >
-    <span class="brand-text">
-      <strong>Their Stories, Our Choices</strong>
-      <small>CHRISTIAN PODCAST MINISTRY</small>
-    </span>
-  </a>
+      ☰
+    </button>
 
-  <button class="menu-toggle" aria-label="Open navigation"
-    aria-expanded="false" aria-controls="main-nav">☰</button>
-  <nav id="main-nav" class="main-nav" aria-label="Main navigation">
-    <a href="index.html">Home</a>
-    <a href="mission.html">Our Mission</a>
-    <a href="podcast.html">Podcast</a>
-    <a href="stories.html">Share Your Story</a>
-    <a href="giving.html">Give &amp; Support</a>
-    <a href="contact.html" aria-current="page">Contact</a>
-  </nav>
-</header>
-
-    <button class="menu-toggle" aria-label="Open navigation"
-      aria-expanded="false" aria-controls="main-nav">☰</button>
-    <nav id="main-nav" class="main-nav" aria-label="Main navigation">
+    <nav
+      id="main-nav"
+      class="main-nav"
+      aria-label="Main navigation"
+    >
       <a href="index.html">Home</a>
       <a href="mission.html">Our Mission</a>
       <a href="podcast.html">Podcast</a>
@@ -47,153 +57,217 @@
     </nav>
   </header>
 
+
   <main>
+
+    <!-- HERO SECTION -->
     <section class="hero">
       <div class="hero-content">
         <p class="eyebrow">WE'D LOVE TO HEAR FROM YOU</p>
-        <h1>Let's Connect.<br><span>Let's Encourage One Another.</span></h1>
+
+        <h1>
+          Let's Connect.<br>
+          <span>Let's Encourage One Another.</span>
+        </h1>
+
         <p class="hero-text">
           Have a question, a testimony, a guest idea, or a desire
           to connect with our ministry? We welcome your interest.
         </p>
       </div>
+
       <div class="hero-art" aria-hidden="true">
         <div class="art-circle">
           <span class="art-cross">♡</span>
-          <span class="art-caption">CONNECTION • COMMUNITY • FAITH</span>
+          <span class="art-caption">
+            CONNECTION • COMMUNITY • FAITH
+          </span>
         </div>
       </div>
     </section>
 
+
+    <!-- WELCOME SECTION -->
     <section class="section welcome">
       <p class="eyebrow">GET IN TOUCH</p>
+
       <h2>There Is a Place for Your Voice</h2>
+
       <p class="section-intro">
-        Whether you are interested in sharing your testimony, suggesting
-        a podcast topic, asking about the ministry, or offering
-        encouragement, we welcome respectful and thoughtful communication.
+        Whether you are interested in sharing your testimony,
+        suggesting a podcast topic, asking about the ministry,
+        or offering encouragement, we welcome respectful and
+        thoughtful communication.
       </p>
     </section>
 
+
+    <!-- MINISTRY INQUIRIES -->
     <section class="section">
       <div class="section-heading">
         <p class="eyebrow">HOW WE CAN CONNECT</p>
         <h2>Ministry Inquiries</h2>
       </div>
+
       <div class="card-grid">
+
         <article class="ministry-card">
           <span class="card-icon" aria-hidden="true">🎙</span>
           <h3>Podcast Guests</h3>
-          <p>Interested in sharing your testimony or participating in a future conversation? We welcome inquiries.</p>
+          <p>
+            Interested in sharing your testimony or participating
+            in a future conversation? We welcome inquiries.
+          </p>
         </article>
+
         <article class="ministry-card">
           <span class="card-icon" aria-hidden="true">🙏</span>
           <h3>Ministry Questions</h3>
-          <p>Have questions about our mission, Christian values, or the work of the podcast ministry? Reach out to us.</p>
+          <p>
+            Have questions about our mission, Christian values,
+            or the work of the podcast ministry? Reach out to us.
+          </p>
         </article>
+
         <article class="ministry-card">
           <span class="card-icon" aria-hidden="true">♡</span>
           <h3>Encouragement &amp; Support</h3>
-          <p>We appreciate thoughtful feedback, words of encouragement, and people who want to help share our message.</p>
+          <p>
+            We appreciate thoughtful feedback, words of encouragement,
+            and people who want to help share our message.
+          </p>
         </article>
+
       </div>
     </section>
 
-    <section class="support-banner">
+
+    <!-- CONTACT SECTION: SINGLE HEADING, SINGLE FORM -->
+    <section class="support-banner" id="contact-form-section">
+
       <p class="eyebrow">START A CONVERSATION</p>
+
       <h2>We Look Forward to Connecting.</h2>
+
       <p>
-        Our ministry is growing. Contact details and additional ways
-        to connect will be shared here as they are established.
-        Please check back for updates.
+        Our ministry is growing, and we welcome your questions,
+        testimonies, podcast ideas, and words of encouragement.
+        Send us a message using the form below.
       </p>
-      <a class="button button-gold" href="stories.html">
-        Learn About Sharing Your Story
-      </a>
+
+      <form id="contact-form">
+
+        <div class="form-group">
+          <label for="from_name">Your Name</label>
+
+          <input
+            type="text"
+            id="from_name"
+            name="from_name"
+            autocomplete="name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="from_email">Your Email Address</label>
+
+          <input
+            type="email"
+            id="from_email"
+            name="from_email"
+            autocomplete="email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="message">Your Message</label>
+
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+          ></textarea>
+        </div>
+
+        <button
+          class="button button-gold"
+          type="submit"
+          id="submit-button"
+        >
+          Send Message
+        </button>
+
+        <p
+          id="form-status"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </form>
+
+      <p>
+        Interested in sharing your testimony?
+        <a href="stories.html">Learn About Sharing Your Story</a>.
+      </p>
+
     </section>
-
-   
-<section class="support-banner" id="contact-form-section">
-  <p class="eyebrow">START A CONVERSATION</p>
-  <h2>We Look Forward to Connecting.</h2>
-  <p>
-    Have a testimony, question, or message for our ministry?
-    Complete the form below. We look forward to hearing from you.
-  </p>
-
-  <form id="contact-form">
-    <div class="form-group">
-      <label for="from_name">Your Name</label>
-      <input
-        type="text"
-        id="from_name"
-        name="from_name"
-        autocomplete="name"
-        required
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="from_email">Your Email Address</label>
-      <input
-        type="email"
-        id="from_email"
-        name="from_email"
-        autocomplete="email"
-        required
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="subject">Subject</label>
-      <input
-        type="text"
-        id="subject"
-        name="subject"
-        required
-      >
-    </div>
-
-    <div class="form-group">
-      <label for="message">Your Message</label>
-      <textarea
-        id="message"
-        name="message"
-        rows="6"
-        required
-      ></textarea>
-    </div>
-
-    <button class="button button-gold" type="submit" id="submit-button">
-      Send Message
-    </button>
-
-    <p id="form-status" role="status" aria-live="polite"></p>
-  </form>
-</section>
 
   </main>
 
+
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <a class="footer-brand" href="index.html">Their Stories, Our Choices</a>
+
+    <a class="footer-brand" href="index.html">
+      Their Stories, Our Choices
+    </a>
+
     <p>A ministry of faith, testimony, and encouragement.</p>
+
     <nav aria-label="Footer navigation">
       <a href="mission.html">Our Mission</a>
       <a href="giving.html">Give &amp; Support</a>
       <a href="contact.html">Contact</a>
     </nav>
-    <p class="copyright">© <span id="year">2026</span> Their Stories, Our Choices. All rights reserved.</p>
-    <p class="footer-note">Created to encourage faith and glorify God.</p>
+
+    <p class="copyright">
+      © <span id="year">2026</span>
+      Their Stories, Our Choices. All rights reserved.
+    </p>
+
+    <p class="footer-note">
+      Created to encourage faith and glorify God.
+    </p>
+
   </footer>
- 
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-<script>
-  emailjs.init({
-    publicKey: "eHTJOEBvI6z9oNjD_"
-  });
-</script>
 
-<script src="script.js"></script>
+  <!-- EMAILJS LIBRARY -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- EMAILJS INITIALIZATION -->
+  <script>
+    emailjs.init({
+      publicKey: "eHTJOEBvI6z9oNjD_"
+    });
+  </script>
+
+  <!-- EXISTING SITE JAVASCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
