@@ -1,67 +1,21 @@
-const menuButton = document.querySelector(".menu-toggle");
-const navigation = document.querySelector("#main-nav");
+document.addEventListener("DOMContentLoaded", function () { const form = document.getElementById("contact-form"); const button = document.getElementById("submit-button"); const status = document.getElementById("form-status");
 
-if (menuButton && navigation) {
-  menuButton.addEventListener("click", () => {
-    const isOpen = navigation.classList.toggle("is-open");
+if (!form || !button || !status) return;
 
-    menuButton.setAttribute("aria-expanded", String(isOpen));
-    menuButton.setAttribute(
-      "aria-label",
-      isOpen ? "Close navigation" : "Open navigation"
-    );
-    menuButton.textContent = isOpen ? "×" : "☰";
-  });
+form.addEventListener("submit", async function (event) { event.preventDefault();
 
-  navigation.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      navigation.classList.remove("is-open");
-      menuButton.setAttribute("aria-expanded", "false");
-      menuButton.setAttribute("aria-label", "Open navigation");
-      menuButton.textContent = "☰";
-    });
-  });
-}
+if (!form.reportValidity()) return;
 
-const yearElement = document.querySelector("#year");
+button.disabled = true; button.textContent = "Sending..."; status.textContent = "";
 
-if (yearElement) {
-  yearElement.textContent = new Date().getFullYear();
-}
-(function () {
-  const contactForm = document.getElementById("contact-form");
+try { await emailjs.sendForm( "service_976igch", "template_6kbk8ym", form );
 
-  // Run only on pages containing the contact form.
-  if (!contactForm) return;
+status.textContent = "Thank you! Your message has been sent successfully.";
 
-  const status = document.getElementById("form-status");
-  const submitButton = document.getElementById("submit-button");
+form.reset();
 
-  contactForm.addEventListener("submit", async function (event) {
-    event.preventDefault();
+} catch (error) { console.error("EmailJS error:", error);
 
-    status.textContent = "Sending your message...";
-    submitButton.disabled = true;
+status.textContent = "Sorry, your message could not be sent. Please try again.";
 
-    try {
-      await emailjs.sendForm(
-        "service_976igch",
-        "template_6kbk8ym",
-        contactForm
-      );
-
-      status.textContent =
-        "Thank you! Your message has been sent successfully.";
-
-      contactForm.reset();
-   } catch (error) {
-  console.error("EmailJS error details:", error);
-  console.error("Status:", error.status);
-  console.error("Text:", error.text);
-      status.textContent =
-        "Sorry, your message could not be sent. Please try again.";
-    } finally {
-      submitButton.disabled = false;
-    }
-  });
-})();
+} finally { button.disabled = false; button.textContent = "Send Message"; } }); });
